@@ -53,4 +53,51 @@ if age < 18:
 else:
      print('You are an adult.')
 
+# Try and Except structure: The try and except structure is used to handle errors and exceptions in a program. It allows the program to continue running even if an error occurs. eg:
+astr = 'Jason'
+try: 
+     print('Hello')
+     istr = int(astr)
+     print('There') 
+except:
+     istr = -1
+print('Done', istr)
+
+# eg2:
+rawstr = input('Enter a number:')
+try: 
+     ival = int(rawstr)
+except:
+     ival = - 1
+if ival > 0:
+     print('Nice work')
+else:
+     print('Not a number')
+
+# Functions: A function is a named block of code that performs a specific task. Functions are used to organize code and make it more reusable. In python, a function is a reusable code that takes argument(s) as input, do some computation, and returns a result. We call/invoke the function by using the function name, parentheses, and arguments in an expression. Functions are defined using the def keyword. 
+# eg1:
+def thing():
+     print('Hello')
+     print('There')
+thing()
+print('Zip')
+thing()
+
+# eg2:
+def greet(lang):
+     if lang == 'es':
+          print('Hola')
+     elif lang == 'fr':
+          print('Bonjour')
+     else:
+          print('Hello')
+greet('en')
+greet('es')
+greet('fr')
+
+# Types of Funcions in Python:
+# Built-in functions: python provides a number of built-in functions that can be used to perform common tasks. eg: print(), input(), int(), str(), len(), type(),range(), sum(), max(), min() etc.
+
+#  User-defined functions: Users can define their own functions to perform specific tasks. eg: greet(lang) function defined above. Other user defind functions include:Anonymous functions(lambda functions), Recursive functions, Higher-order functions, Generator functions.
+
 #Loops and Iteration: Loops are used to repeat a block of code multiple times. In python, loops are implemented using the for and while statements. eg: 
