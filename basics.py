@@ -251,3 +251,66 @@ for i in range(1, 6):
 fruits = ['apple', 'banana', 'orange']
 print(fruits)
 # Accessing list items
+
+# Looping through Strings: You can loop through each character in a string using a for loop. This allows you to access and manipulate each character individually.
+
+fruit = "banana"
+for letter in fruit:
+    print(letter)
+
+# Looping and Counting: You can use a loop to count the occurrences of a specific character in a string. This is useful for analyzing text data.
+word = "banana"
+count = 0
+for letter in word:
+    if letter == 'a':
+        count = count + 1
+print('Number of a\'s:', count)
+
+# Slicing Strings: Slicing allows you to extract a portion of a string by specifying the start and end indices. This is useful for obtaining substrings.
+s = "Hello, World!"
+print(s[0:5])  # Output: Hello
+print(s[7:12]) # Output: World
+print(s[:5])   # Output: Hello
+print(s[7:])   # Output: World!
+print(s[:])    # Output: Hello, World!
+
+# String Comparison: You can compare strings using comparison operators such as ==, !=, <, >, <=, >=. String comparison is case-sensitive and based on the lexicographical order of characters.
+str1 = "apple"
+str2 = "banana"
+if str1 < str2:
+    print(f'"{str1}" comes before "{str2}"')
+else:
+    print(f'"{str1}" comes after "{str2}"')
+
+# String Methods: Python provides several built-in string methods that allow you to manipulate and analyze strings. Some common string methods include lower(), upper(), strip(), replace(), find(), and split().
+text = "  Hello, World!  "
+print(text.lower())        # Output: "  hello, world!  "
+print(text.upper())        # Output: "  HELLO, WORLD!  "
+print(text.strip())       # Output: "Hello, World!"
+print(text.replace("World", "Python"))  # Output: "  Hello, Python!
+print(text.find("World"))  # Output: 8
+print(text.split(","))     # Output: ['  Hello', ' World!  ']
+
+# Parsing and Extracting: You can parse strings to extract specific information. This is often done using string methods or regular expressions.
+
+data = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
+atpos = data.find('@')
+print(atpos)
+# Output: 21
+sppos = data.find(' ', atpos)
+print(sppos)
+# Output: 31
+host = data[atpos + 1:sppos]
+print(host)
+# Output: uct.ac.za
+
+# Reading and Writing Files: You can read from and write to files using string manipulation techniques. This is useful for processing text data stored in files.
+# eg:
+fhand = open('mbox-short.txt')
+for line in fhand:
+     line = line.rstrip()
+     if line.startswith('From:'):
+          print(line)
+
+# File Processing: A text file is a sequence of lines of text. Each line is terminated with a special character called a newline character. When you read a file, you get the newline character as part of the line. To remove the newline character from the end of the line, you can use the rstrip() method. eg:
+
