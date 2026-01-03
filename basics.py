@@ -185,6 +185,57 @@ for the_num in [9, 41, 12, 3, 74, 15]:
      print(largest_so_far, the_num)
 print('After', largest_so_far)
 
+# Counting in a Loop:A common use of loops is to count the number of items that meet a certain condition.To count how many times we execute a loop, we introduce a counter variable thsat starts at 0 and we add one to it each time through the loop. eg:
+zork = 0
+print('Before', zork)
+for number in [9, 41, 12, 3, 74, 15]:
+     zork = zork + 1
+     print(zork, number)
+
+# Summing in a Loop: Another common use of loops is to compute a running total or sum of values. To compute a sum, we introduce an accumulator variable that starts at 0 and we add each value to it as we loop through the values. eg:
+zork = 0
+print('Before', zork)
+for number in [9, 41, 12, 3, 74, 15]:
+     zork = zork + number
+     print(zork, number)
+print('After', zork)
+
+# Average in a Loop: To compute an average, we need to keep track of both the sum of the values and the count of the values. We can use two accumulator variables, one for the sum and one for the count. eg:
+count = 0
+sum = 0
+print('Before', count, sum)
+for value in [9, 41, 12, 3, 74, 15]:
+     count = count + 1
+     sum = sum + value
+     print(count, sum, value)
+print('After', count, sum, sum / count)
+
+# Filtering in a Loop: Sometimes we only want to process certain values in a loop based on a condition. We can use an if statement inside the loop to filter the values. eg:
+print('Before')
+for value in [9, 41, 12, 3, 74, 15]:
+     if value > 20:
+          print('Large number', value)
+print('After')
+
+# Search using a Boolean Variable: We can use a boolean variable to keep track of whether we have found a certain value in a loop. If we just want to search and know if a value was found, we use a variable that starts at False and is set to True as soon as we find what we are looking for. eg:
+found = False
+print('Before', found)
+for value in [9, 41, 12, 3, 74, 15]:
+     if value == 3:
+          found = True
+     print(found, value)
+print('After', found)
+
+# Finding the Smallest Value: To find the smallest value in a loop, we can use a variable to keep track of the smallest value found so far. We initialize this variable to None and update it whenever we find a smaller value. eg:
+smallest = None
+print('Before', smallest)
+for value in [9, 41, 12, 3, 74, 15]:
+     if smallest is None :
+       smallest = value
+     elif value < smallest:
+          smallest = value
+     print(smallest, value)
+print('After', smallest)
 
 # Nested Loops: A nested loop is a loop that is contained within another loop. The inner loop is executed for each iteration of the outer loop. eg:
 for i in range(3):
