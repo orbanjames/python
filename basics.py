@@ -89,7 +89,7 @@ def greet(lang):
           print('Hola')
      elif lang == 'fr':
           print('Bonjour')
-     else:
+     else: 
           print('Hello')
 greet('en')
 greet('es')
@@ -99,5 +99,20 @@ greet('fr')
 # Built-in functions: python provides a number of built-in functions that can be used to perform common tasks. eg: print(), input(), int(), str(), len(), type(),range(), sum(), max(), min() etc.
 
 #  User-defined functions: Users can define their own functions to perform specific tasks. eg: greet(lang) function defined above. Other user defind functions include:Anonymous functions(lambda functions), Recursive functions, Higher-order functions, Generator functions.
+
+# The return statement: the return statement is used to return a value from a function. When a return statement is eecuted, the function terminates and the value s returned to the caller. eg1:
+def greeting():
+     return 'Hello'
+print(greeting(), 'Jason')
+
+#  eg2
+def addtwo(a,b):
+     added = a + b
+     return added
+
+x = addtwo(3,5)
+print(x)
+
+
 
 #Loops and Iteration: Loops are used to repeat a block of code multiple times. In python, loops are implemented using the for and while statements. eg: 
