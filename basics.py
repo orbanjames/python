@@ -9,7 +9,6 @@ for line in handle:
     for word in words:
         counts[word] = counts.get(word,0) + 1
 
-
 bigcount = None
 bigword = None
 for word, count in counts.items():
@@ -110,9 +109,94 @@ def addtwo(a,b):
      added = a + b
      return added
 
-x = addtwo(3,5)
+x = addtwo(3, 5)
 print(x)
 
-
-
 #Loops and Iteration: Loops are used to repeat a block of code multiple times. In python, loops are implemented using the for and while statements. eg: 
+# eg1: Using a for loop to iterate over a list
+fruits = ['apple', 'banana', 'orange']
+for fruit in fruits:
+     print(fruit)
+
+# eg2: Using a while loop to print number from 1 to 5
+count = 1
+while count <= 5:
+     print(count)
+     count = count + 1
+
+# eg3: Using while loop to print numbers from 5 to 1
+n = 5
+while n > 0:
+     print(n)
+     n = n - 1
+     print('Blastoff!')
+     print(n)
+
+#  Breaking out of a Loop: The break statement is used to exit a loop prematurely. When a break ststement is executed, the loop terminates and the program continues with the next stetement after the loop. eg:
+n = 0
+while True:
+     print(n)
+     n = n + 1
+     if n == 5:
+          break
+print('Done')
+#  Continuing a Loop: The continue statement is used to skip the current iteration of a loop and move to the next iteration. When a continue statement is executed, the rest of the code in the loop is skipped for the current iteration, and the loop continues with the next iteration. eg:
+for i in range(10):
+     if i % 2 == 0:
+          continue
+     print(i)
+
+# eg2:this program prints all odd numbers between 1 and 10
+n = 0
+while n < 10:
+     n = n + 1
+     if n % 2 == 0:
+          continue
+     print(n)
+
+# Definite and indefinite loops:
+# Definite loops: A definite loop is a loop that iterates over a sequence of values, such as a list or a range of numbers. The number of iterations is known before the loop starts. eg: for loop is a definite loop.
+# Indefinite loops: An indefinite loop is a loop that continues to iterate until a certain condition is met. The number of iterations is not known before the loop starts. eg: while loop is an indefinite loop.
+# eg1: Definite loop using for loop
+for i in range(5):
+     print(i)
+
+# Loop ideoms: A loop idiom is a common pattern or technique used in programming to solve a specific problem using loops. eg:
+# eg1: Summing a series of numbers using a loop 
+total = 0
+for i in range(1, 6):
+     total = total + i
+print('Total:', total)
+
+# eg2: Finding the largest number in a list using a loop
+numbers = [3, 5, 2, 8, 1]
+largest = numbers[0]
+for num in numbers:
+     if num > largest:
+          largest = num
+print('Largest number:', largest)
+
+# eg3: Finding the largest value
+largest_so_far = -1
+print('Before', largest_so_far)
+for the_num in [9, 41, 12, 3, 74, 15]:
+     if the_num > largest_so_far:
+          largest_so_far = the_num
+     print(largest_so_far, the_num)
+print('After', largest_so_far)
+
+
+# Nested Loops: A nested loop is a loop that is contained within another loop. The inner loop is executed for each iteration of the outer loop. eg:
+for i in range(3):
+     for j in range(2):
+          print(i, j)
+# eg2: Nested loop to print a multiplication table
+for i in range(1, 6):
+     for j in range(1, 6):
+          print(i * j, end='\t')
+     print()
+
+# Lists: A list is a collection of items that are ordered and changeable. Lists are defined using square brackets [] and items are separated by commas. eg:
+fruits = ['apple', 'banana', 'orange']
+print(fruits)
+# Accessing list items
