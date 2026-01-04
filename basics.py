@@ -1,22 +1,4 @@
-# Program to open a file, read it line by line, find the most common word and print the bigword and its count
-
-name = input('Enter file:')
-handle = open(name)
-
-counts = dict()
-for line in handle:
-    words = line.split()
-    for word in words:
-        counts[word] = counts.get(word,0) + 1
-
-bigcount = None
-bigword = None
-for word, count in counts.items():
-        if bigcount is None or count > bigcount:
-            bigword = word
-            bigcount = count
-print (bigword, bigcount)
-
+# PYTHON BASICS
 # Paseltongue is the langiage of the serpants and those who can converse with them. It is a hissing, sibilant langiuage that is difficult for most to learn. An individual who can speak paseltongue is known as a Parselmouth. It is a very uncommon skill, and may be hereditary. Nearly all known Parselmpouths are descended from Salazar Sytherin. 
 
 # Python Reserved words: False, None, True, and, as, assert, async, await, break, class, continue, def, del, elif, else, except, finally, for, from, global, if, import, in, is, lambda, nonlocal, not, or, pass, raise, return, try, while, with, yield
@@ -564,4 +546,107 @@ count = 0
 for fruit in fruits:
      count = count + 1
 print('Number of fruits:', count)
+
+# Python Dictionaries: A dictionary is a collection of key-value pairs that are unordered, changeable, and indexed. Dictionaries are defined using curly braces {} and key-value pairs are separated by commas. eg:
+person = {'name': 'John', 'age': 30, 'city': 'New York'}
+print(person)
+print(person['name'])  # Output: John
+print(person['age'])   # Output: 30
+person['age'] = 31    # Modifying a value in the dictionary
+print(person)         # Output: {'name': 'John', 'age': 31, 'city': 'New York'}
+
+# Dictionary Literals: A dictionary literal is a fixed value that represents a dictionary of key-value pairs. Dictionary literals are defined using curly braces {} and key-value pairs are separated by commas. eg:
+car = {'make': 'Toyota', 'model': 'Camry', 'year': 2020}
+print(car)  # Output: {'make': 'Toyota', 'model': 'Camry', 'year': 2020}
+
+# Dictionaries are Mutable: Dictionaries are mutable, which means that their contents can be changed after they are created. You can add, remove, or modify key-value pairs in a dictionary using various methods. eg:
+student = {'name': 'Alice', 'age': 20, 'major': 'Computer Science'}
+student['age'] = 21  # Modifying a value in the dictionary
+print(student)  # Output: {'name': 'Alice', 'age': 21, 'major': 'Computer Science'}
+
+
+# Dictionary Operations: Python provides several built-in methods and operations for working with dictionaries. Some common dictionary operations include:
+# keys(): Returns a view object that contains the keys of the dictionary.
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+print(my_dict.keys())  # Output: dict_keys(['a', 'b', 'c'])
+# values(): Returns a view object that contains the values of the dictionary.
+
+# The get method for dictionaries: The get() method is a built-in method in Python that is used to retrieve the value associated with a specified key in a dictionary. The get() method takes two arguments: the key to be searched for and an optional default value to be returned if the key is not found in the dictionary. If the key is found, the corresponding value is returned; otherwise, the default value (if provided) is returned. If no default value is provided and the key is not found, the method returns None.
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+print(my_dict.get('b'))        # Output: 2
+print(my_dict.get('d', 4))     # Output: 4
+print(my_dict.get('e'))        # Output: None
+
+# Using the get() method to simplify counting occurrences of items in a list
+# eg3: 
+counts = dict()
+names = ['Alice', 'Bob', 'Alice', 'Charlie', 'Bob', 'Alice']
+for name in names:
+     counts[name] = counts.get(name, 0) + 1
+print(counts)  # Output: {'Alice': 3, 'Bob': 2, 'Charlie': 1}
+
+# Counting Words in a File: We can use a dictionary to count the occurrences of each word in a file. We read the file line by line, split each line into words, and update the count for each word in the dictionary. eg:
+counts = dict()
+print('Enter a line of text:')
+line = input('')
+
+words = line.split()
+
+print('counting...')
+for word in words:
+     counts[word] = counts.get(word, 0) + 1
+
+print('Counts:', counts)
+
+# Definite Loops and Dictionaries: We can use a for loop to iterate through the key-value pairs in a dictionary. This allows us to access and manipulate each key-value pair individually. eg:
+counts = {'apple': 2, 'banana': 3, 'orange': 1}
+for key in counts:
+     print(key, counts[key])
+
+# eg2: Finding the most common word in a dictionary
+bigcount = None
+bigword = None
+for word, count in counts.items():
+        if bigcount is None or count > bigcount:
+            bigword = word
+            bigcount = count
+print (bigword, bigcount)
+
+# Retrieving lists of Keys and Values: We can use the keys() and values() methods to retrieve lists of keys and values from a dictionary. This allows us to access and manipulate the keys and values separately. eg:
+jjj = {'a': 1, 'b': 2, 'c': 3}
+print(list(jjj))         # Output: ['a', 'b', 'c']
+print(list(jjj.keys()))    # Output: ['a', 'b', 'c']
+print(list(jjj.values()))  # Output: [1, 2, 3]
+print(jjj.items())      # Output: dict_items([('a', 1), ('b', 2), ('c', 3)])
+
+# Two Iteration Variables: When iterating through a dictionary using the items() method, we can use two iteration variables to access both the key and the value of each key-value pair. This allows us to work with both the key and the value simultaneously. “This is a Pythonic feature that is especially concise and readable in Python, though similar destructuring mechanisms exist in some other programming languages.”. eg:
+jjj = {'a': 1, 'b': 2, 'c': 3}
+for k, v in jjj.items():
+     print('Key:', k, 'Value:', v)
+
+# Program to open a file, read it line by line, find the most common word and print the bigword and its count
+
+name = input('Enter file:')
+handle = open(name)
+
+counts = dict()
+for line in handle:
+    words = line.split()
+    for word in words:
+        counts[word] = counts.get(word,0) + 1
+
+bigcount = None
+bigword = None
+for word, count in counts.items():
+        if bigcount is None or count > bigcount:
+            bigword = word
+            bigcount = count
+print (bigword, bigcount)
+
+# eg2:
+# if name in counts:
+#      x = counts[name]
+# else:
+#      x = 0
+# x = counts.get(name, 0)
 
