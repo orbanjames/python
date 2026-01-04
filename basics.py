@@ -21,7 +21,81 @@ print (bigword, bigcount)
 
 # Python Reserved words: False, None, True, and, as, assert, async, await, break, class, continue, def, del, elif, else, except, finally, for, from, global, if, import, in, is, lambda, nonlocal, not, or, pass, raise, return, try, while, with, yield
 
-# Variables, Expressions and Statements
+# DATA TYPES AND OPERATORS
+# Numeric Types: int, float, complex
+x = 5           # int
+y = 3.14        # float
+z = 2 + 3j     # complex
+print(type(x))
+print(type(y))
+print(type(z))
+
+# Arithmetic Operators: +, -, *, /, //, %, **
+a = 10
+b = 3
+print(a + b)    # Addition
+print(a - b)    # Subtraction
+print(a * b)    # Multiplication
+print(a / b)    # Division
+print(a // b)   # Floor Division
+print(a % b)    # Modulus
+print(a ** b)   # Exponentiation
+# Comparison Operators: ==, !=, >, <, >=, <=
+print(a == b)   # Equal to
+print(a != b)   # Not equal to
+print(a > b)    # Greater than
+print(a < b)    # Less than
+print(a >= b)   # Greater than or equal to
+print(a <= b)   # Less than or equal to
+# Logical Operators: and, or, not
+print((a > b) and (a != b))  # Logical AND
+print((a > b) or (a == b))   # Logical OR
+print(not(a > b))             # Logical NOT
+
+# TYPE CONVERSION: Type conversion is the process of converting a value from one data type to another. In python, we can use built-in functions to convert between different data types. eg:
+x = 5           # int
+y = 3.14        # float
+z = '10'        # str
+# Converting int to float
+x_float = float(x)
+print(x_float)  # Output: 5.0
+# Converting float to int
+y_int = int(y)
+print(y_int)    # Output: 3
+# Converting str to int
+z_int = int(z)
+print(z_int)    # Output: 10
+# Converting int to str
+x_str = str(x)
+print(x_str)    # Output: 5
+# Converting float to str
+y_str = str(y)
+print(y_str)    # Output: 3.14
+# Converting str to float
+z_float = float(z)
+print(z_float)  # Output: 10.0
+
+# TYPE PROMOTION: Type promotion is the automatic conversion of a value from one data type to another during an operation. In python, when we perform an operation between two different data types, python automatically promotes the lower data type to the higher data type. eg:
+x = 5           # int
+y = 3.14        # float
+# Adding int and float
+result = x + y
+print(result)   # Output: 8.14
+print(type(result))  # Output: <class 'float'>
+# In the above example, python automatically promotes the int value of x to a float value before performing the addition operation.
+
+# Type Casting: Type casting is the explicit conversion of a value from one data type to another using built-in functions. eg:
+x = 5           # int
+y = 3.14        # float
+# Casting int to float
+x_float = float(x)
+print(x_float)  # Output: 5.0
+# Casting float to int
+y_int = int(y)
+print(y_int)    # Output: 3
+
+
+# VARIABLES, EXPRESSIONS and STATEMENTS
 # Constants: Fixed values such as numbers, letter, and strings are called "constants" because their values does not change.
 # Variables: A variable is a named location used to store data in the memory. The value of a variable can change during program execution. eg:
 x = 12.2
@@ -73,7 +147,7 @@ if ival > 0:
 else:
      print('Not a number')
 
-# Functions: A function is a named block of code that performs a specific task. Functions are used to organize code and make it more reusable. In python, a function is a reusable code that takes argument(s) as input, do some computation, and returns a result. We call/invoke the function by using the function name, parentheses, and arguments in an expression. Functions are defined using the def keyword. 
+# FUNCTIONS: A function is a named block of code that performs a specific task. Functions are used to organize code and make it more reusable. In python, a function is a reusable code that takes argument(s) as input, do some computation, and returns a result. We call/invoke the function by using the function name, parentheses, and arguments in an expression. Functions are defined using the def keyword. 
 # eg1:
 def thing():
      print('Hello')
@@ -112,7 +186,7 @@ def addtwo(a,b):
 x = addtwo(3, 5)
 print(x)
 
-#Loops and Iteration: Loops are used to repeat a block of code multiple times. In python, loops are implemented using the for and while statements. eg: 
+#LOOPS AND ITERATION: Loops are used to repeat a block of code multiple times. In python, loops are implemented using the for and while statements. eg: 
 # eg1: Using a for loop to iterate over a list
 fruits = ['apple', 'banana', 'orange']
 for fruit in fruits:
@@ -247,10 +321,16 @@ for i in range(1, 6):
           print(i * j, end='\t')
      print()
 
-# Lists: A list is a collection of items that are ordered and changeable. Lists are defined using square brackets [] and items are separated by commas. eg:
-fruits = ['apple', 'banana', 'orange']
-print(fruits)
-# Accessing list items
+# STRINGS AND TEXT PROCESSING
+# Strings: A string is a sequence of characters enclosed in single quotes (' ') or double quotes (" "). Strings are used to represent text data in Python. eg:
+message = "Hello, World!"
+print(message)
+# String Indexing: You can access individual characters in a string using indexing. The index of the first character is 0, the second character is 1, and so on. Negative indexing allows you to access characters from the end of the string, with -1 being the last character.
+s = "Hello, World!"
+print(s[0])   # Output: H
+print(s[7])   # Output: W
+print(s[-1])  # Output: !
+print(s[-5])  # Output: o
 
 # Looping through Strings: You can loop through each character in a string using a for loop. This allows you to access and manipulate each character individually.
 
@@ -304,6 +384,13 @@ host = data[atpos + 1:sppos]
 print(host)
 # Output: uct.ac.za
 
+# FILE PROCESSING: A text file is a sequence of lines of text. Each line is terminated with a special character called a newline character. When you read a file, you get the newline character as part of the line. To remove the newline character from the end of the line, you can use the rstrip() method. eg:
+fhand = open('example.txt')
+for line in fhand:
+     line = line.rstrip()
+     print(line)
+fhand.close()
+
 # Opening Files: You can open files using the open() function, which returns a file object. You can then read from or write to the file using various methods.
 file = open('example.txt', 'r') 
 content = file.read()
@@ -327,13 +414,6 @@ fhand.close()
 fhand = open('C:/Users/JamesOrban/Desktop/Python/Python syntax/example.txt')
 content = fhand.read()
 print(content)
-fhand.close()
-
-# File Processing: A text file is a sequence of lines of text. Each line is terminated with a special character called a newline character. When you read a file, you get the newline character as part of the line. To remove the newline character from the end of the line, you can use the rstrip() method. eg:
-fhand = open('example.txt')
-for line in fhand:
-     line = line.rstrip()
-     print(line)
 fhand.close()
 
 # The newline Character: The newline character (\n) is a special character that represents the end of a line in a text file. When reading a file, each line will include the newline character at the end. You can use the rstrip() method to remove the newline character from the end of a line.
@@ -384,3 +464,22 @@ for line in fhand:
      if line.startswith('Subject:'):
           count = count + 1
 print('There were', count, 'subject lines in', fname)
+
+# Bad File Names: We can use a try and except block to handle errors when opening a file. This allows us to gracefully handle situations where the file does not exist or cannot be opened. eg:
+fname = input('Enter file name: ')
+try:
+     fhand = open(fname)
+except:
+     print('File cannot be opened:', fname)
+     quit()
+count = 0
+for line in fhand:
+     if line.startswith('Subject:'):
+          count = count + 1
+print('There were', count, 'subject lines in', fname)
+
+# DATA STRUCTUIRES: LISTS AND DICTIONARIES
+
+# PYTHON LISTS: A list is a collection of items that are ordered and changeable. Lists are defined using square brackets [] and items are separated by commas. eg:
+fruits = ['apple', 'banana', 'orange']
+print(fruits)
