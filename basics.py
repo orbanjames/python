@@ -304,13 +304,83 @@ host = data[atpos + 1:sppos]
 print(host)
 # Output: uct.ac.za
 
-# Reading and Writing Files: You can read from and write to files using string manipulation techniques. This is useful for processing text data stored in files.
+# Opening Files: You can open files using the open() function, which returns a file object. You can then read from or write to the file using various methods.
+file = open('example.txt', 'r') 
+content = file.read()
+print(content)
+file.close()
+
+# File Handles: A file handle is a or wrapper which is a reference to an open file. You can use the file handle to read from or write to the file. eg:
+fhand = open('example.txt')
+for line in fhand:
+     print(line)
+fhand.close()
+
+# File Modes: When opening a file, you can specify the mode in which the file is opened. Common modes include 'r' for reading, 'w' for writing (which overwrites the file), and 'a' for appending (which adds to the end of the file).
 # eg:
-fhand = open('mbox-short.txt')
+fhand = open('example.txt', 'w')  # Open file for writing
+fhand.write('Hello, World!\n')
+fhand.close()
+
+# File Paths: A file path is a string that specifies the location of a file on the filesystem. It can be an absolute path (starting from the root directory) or a relative path (starting from the current working directory).
+# eg:
+fhand = open('C:/Users/JamesOrban/Desktop/Python/Python syntax/example.txt')
+content = fhand.read()
+print(content)
+fhand.close()
+
+# File Processing: A text file is a sequence of lines of text. Each line is terminated with a special character called a newline character. When you read a file, you get the newline character as part of the line. To remove the newline character from the end of the line, you can use the rstrip() method. eg:
+fhand = open('example.txt')
+for line in fhand:
+     line = line.rstrip()
+     print(line)
+fhand.close()
+
+# The newline Character: The newline character (\n) is a special character that represents the end of a line in a text file. When reading a file, each line will include the newline character at the end. You can use the rstrip() method to remove the newline character from the end of a line.
+# eg:
+line = "Hello, World!\n"
+print(line.rstrip())  # Output: "Hello, World!"
+
+# Reading Files Line by Line: You can read a file line by line using a for loop. This allows you to process each line individually. A file handle open for read can be treated as a sequence of strings where each line in the file is a string in the sequence. eg:
+xfile = open('mbox.txt')
+for line in xfile:
+     print(line)
+
+# Counting Lines in a File: You can count the number of lines in a file by iterating through each line and incrementing a counter variable. eg:
+fhand = open('mbox.txt')
+count = 0
+for line in fhand:
+     count = count + 1
+print('Line count:', count)
+
+# Reading the Entire File: You can read the entire contents of a file at once using the read() method. This returns the entire file as a single string. eg:
+fhand = open('mbox.txt')
+content = fhand.read()
+print(len(content))
+print(content[:20])  # Print the first 20 characters
+fhand.close()
+
+# Searching Through a File: We can put an if statement in our for loop to only print lines that meet a certain condition. eg:
+fhand = open('mbox.txt')
 for line in fhand:
      line = line.rstrip()
      if line.startswith('From:'):
           print(line)
+fhand.close()
 
-# File Processing: A text file is a sequence of lines of text. Each line is terminated with a special character called a newline character. When you read a file, you get the newline character as part of the line. To remove the newline character from the end of the line, you can use the rstrip() method. eg:
+# Skipping Lines in a File: We can use the continue statement to skip lines that do not meet a certain condition. eg:
+fhand = open('mbox.txt')
+for line in fhand:
+     line = line.rstrip()
+     if not line.startswith('From:'):
+          continue
+     print(line)
 
+# Prompting for a File Name: We can use the input() function to prompt the user for a file name. This allows us to open different files based on user input. eg:
+fname = input('Enter file name: ')
+fhand = open(fname)
+count = 0
+for line in fhand:
+     if line.startswith('Subject:'):
+          count = count + 1
+print('There were', count, 'subject lines in', fname)
