@@ -479,7 +479,89 @@ for line in fhand:
 print('There were', count, 'subject lines in', fname)
 
 # DATA STRUCTUIRES: LISTS AND DICTIONARIES
+# Algortihms: An algorithm is a step-by-step procedure or set of rules for solving a specific problem or performing a specific task. Algorithms are used in computer science and programming to design efficient and effective solutions to various problems. They can be expressed in various forms, such as natural language, pseudocode, or programming languages. eg: searching and sorting algorithms.
+
+# Data Structures: Data structures are specialized formats for organizing, processing, and storing data in a computer so that it can be accessed and modified efficiently. Different types of data structures are suited to different kinds of applications, and some are highly specialized to specific tasks. eg: lists, dictionaries, sets, tuples etc.
+
+# Collections: A collection is a data structure that groups multiple items together into a single unit. Collections are used to store and organize data in a way that allows for efficient access and manipulation. eg: lists, dictionaries, sets, tuples etc.
 
 # PYTHON LISTS: A list is a collection of items that are ordered and changeable. Lists are defined using square brackets [] and items are separated by commas. eg:
 fruits = ['apple', 'banana', 'orange']
 print(fruits)
+print(fruits[0])  # Output: apple
+print(fruits[1])  # Output: banana
+print(fruits[2])  # Output: orange
+fruits.append('grape')  # Adding an item to the list
+print(fruits)  # Output: ['apple', 'banana', 'orange', 'grape']
+fruits.remove('banana')  # Removing an item from the list
+print(fruits)  # Output: ['apple', 'orange', 'grape']
+
+# List Constants: A list constant is a fixed value that represents a list of items. List constants are defined using square brackets [] and items are separated by commas. eg:
+numbers = [1, 2, 3, 4, 5]
+print(numbers)  # Output: [1, 2, 3, 4, 5]
+mixed = [1, 'apple', 3.14, True]
+print(mixed)  # Output: [1, 'apple', 3.14, True]
+
+# Lists are Mutable: Lists are mutable, which means that their contents can be changed after they are created. You can add, remove, or modify items in a list using various methods. eg:
+colors = ['red', 'green', 'blue']
+colors[1] = 'yellow'  # Modifying an item in the list
+print(colors)  # Output: ['red', 'yellow', 'blue']
+colors.append('purple')  # Adding an item to the list
+print(colors)  # Output: ['red', 'yellow', 'blue', 'purple']
+colors.remove('red')  # Removing an item from the list
+print(colors)  # Output: ['yellow', 'blue', 'purple']
+
+# List Operations: Python provides several built-in methods and operations for working with lists. Some common list operations include:
+# len(): Returns the number of items in a list.
+my_list = [1, 2, 3, 4, 5]
+print(len(my_list))  # Output: 5
+# sort(): Sorts the items in a list in ascending order.
+numbers = [5, 2, 8, 1, 4]
+numbers.sort()
+print(numbers)  # Output: [1, 2, 4, 5, 8]
+# reverse(): Reverses the order of items in a list.
+colors = ['red', 'green', 'blue']
+colors.reverse()
+print(colors)  # Output: ['blue', 'green', 'red']
+# index(): Returns the index of the first occurrence of a specified item in a list.
+fruits = ['apple', 'banana', 'orange']
+print(fruits.index('banana'))  # Output: 1
+# count(): Returns the number of occurrences of a specified item in a list.
+numbers = [1, 2, 2, 3, 4, 2]
+print(numbers.count(2))  # Output: 3
+# append(): Adds an item to the end of a list.
+my_list = [1, 2, 3]
+my_list.append(4)
+print(my_list)  # Output: [1, 2, 3, 4]
+# insert(): Inserts an item at a specified index in a list.
+my_list = [1, 2, 3]
+my_list.insert(1, 15)
+print(my_list)  # Output: [1, 15, 2, 3]
+# remove(): Removes the first occurrence of a specified item from a list.
+my_list = [1, 2, 3, 2]
+my_list.remove(2)
+print(my_list)  # Output: [1, 3, 2]
+# pop(): Removes and returns the item at a specified index in a list. If no index is specified, it removes and returns the last item.
+my_list = [1, 2, 3]
+item = my_list.pop(1)
+print(item)     # Output: 2
+print(my_list)  # Output: [1, 3]
+# clear(): Removes all items from a list.
+my_list = [1, 2, 3]
+my_list.clear()
+print(my_list)  # Output: []
+# copy(): Returns a shallow copy of a list.
+original = [1, 2, 3]
+copy_list = original.copy()
+print(copy_list)  # Output: [1, 2, 3]
+
+# Looping through a List: You can loop through each item in a list using a for loop. This allows you to access and manipulate each item individually. eg:
+fruits = ['apple', 'banana', 'orange']
+for fruit in fruits:
+     print(fruit)
+# eg2: Counting the number of items in a list
+count = 0
+for fruit in fruits:
+     count = count + 1
+print('Number of fruits:', count)
+
