@@ -650,3 +650,59 @@ print (bigword, bigcount)
 #      x = 0
 # x = counts.get(name, 0)
 
+# Tuples are immutable: Once a tuple is created, its elements cannot be changed, added, or removed. eg:
+z = (5, 6, 7)
+# z[0] = 10  # This will raise a TypeError
+print(z)
+# However, you can create a new tuple that combines elements from existing tuples:
+a = (1, 2, 3)
+b = (4, 5, 6)
+c = a + b
+print(c)  # Output: (1, 2, 3, 4, 5, 6)
+# Tuples can be used as keys in dictionaries: Since tuples are immutable, they can be used as keys in dictionaries, unlike lists. eg:
+my_dict = {('a', 1): 'value1', ('b', 2): 'value2'}
+print(my_dict[('a', 1)])  # Output: value1
+# Tuples can be unpacked: You can assign the elements of a tuple to individual variables in a single statement. eg:
+person = ('Alice', 30, 'Engineer')
+name, age, profession = person
+print(name)        # Output: Alice
+print(age)         # Output: 30
+print(profession)  # Output: Engineer
+
+# Sorting Lists of Tuples: You can sort a list of tuples based on the elements of the tuples. By default, Python sorts tuples lexicographically, meaning it compares the first elements, and if they are equal, it compares the second elements, and so on. We can take advantage of the ability to sort a list of tuples to get a sorted version of a dictionary. First, we sort the dictionary by the key using the items() method and sorted() function.eg:
+d = {'a': 3, 'b': 1, 'c': 2}
+d.items()  # Output: dict_items([('a', 3), ('b', 1), ('c', 2)])
+sorted(d.items())  # Output: [('a', 3), ('b', 1), ('c', 2)]
+for k, v in sorted(d.items()):
+     print(k, v)
+# To sort the dictionary by value, we can create a list of tuples where each tuple contains the value and the key. We can then sort this list of tuples to get the desired order. eg:
+d = {'a': 3, 'b': 1, 'c': 2}
+tmp = list()
+for k, v in d.items():
+     tmp.append((v, k))
+print(tmp)  # Output: [(3, 'a'), (1, 'b'), (2, 'c')]
+tmp = sorted(tmp, reverse=True)   
+print(tmp)  # Output: [(3, 'a'), (2, 'c'), (1, 'b')]
+
+# eg2: Program to read through a file and build a histogram of the counts of each word using a dictionary. Then we convert the dictionary into a list of tuples and sort the list in reverse order based on the count. Finally, we print the top 10 most common words along with their counts.
+# name = input('Enter file:')
+handle = open('romeo.txt')
+counts = dict()
+for line in handle:
+    words = line.split()
+    for word in words:
+        counts[word] = counts.get(word, 0) + 1
+
+#print(sorted([(v, k) for k, v in d.items()])) 
+lst = list()
+for key, val in counts.items():
+    lst.append((val, key))
+lst = sorted(lst, reverse=True)
+
+for val, key in lst[:10]:
+    print(key, val)
+
+
+
+
+
