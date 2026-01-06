@@ -819,4 +819,22 @@ for line in fhand:
 # Why Scrape? Pull data- particularly socio data- who links to who?, Get your own data back ou of some system that has no 'export capability', Monitor a site for new information, Spider the web to make a database for a search engine.
 
 # The Easy Way - Beautiful Soup: You could do string searches the hard way. Or use the free software library called BeautifulSoup from www.crummy.com
+# BeautifulSoup Installation
+# To run this, you can install BeautifulSoup
+# https://pypi.python.org/pypi/beautifulsoup4
+
+# or download the file
+# http://www.py4e.com/code3/bs4.zip and unzip it in the same directory as this file.
+
+import urllib.request, urllib.parse, urllib.error
+from bs4 import BeautifulSoup
+
+url = input('Enter the url: ')
+html = urllib.request.urlopen(url).read()
+soup = BeautifulSoup(html, 'html.parser')
+# Retrieve all of the archor tags
+tags = soup('a')
+for tag in tags:
+     print(tag.get('href', None))
+
 
