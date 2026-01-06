@@ -749,4 +749,74 @@ for line in hand:
      numlist.append(num)
 print('Maximum:', max(numlist)) # Maximum = 0.9907
 
+# NETWORKED PROGRAMS
+
+# TCP(Transmission Control Protocol) Connections/Sockets: In computer networking, an internet socket or network socket is an endpoint of a bidirctional inter-process communication flow across an internet Protocol-based compuetr network, such as the internet.
+
+# TCP Port Numbers: A port is an application-specific or process-specific software communication endpoint. it allows multiple networked applications to coexist on the same server. There are a list of well-known TCP port numbers.
+# Common TCP Ports: Telnet(23)-Login, SSH(22)-secure login, HTTP(80), HTTPS(443)-secure,SMTP(25)(mail), IMAP(143/220/993)- Mail Retrieval, POP(109/110)- Mail Retrieval, DNS(53)-Dormain Name, FTP(21)-File Transfer. 
+
+# Sockets in Python: Python has built-in support for TCP Sockets
+
+import socket
+mysocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+mysocket.connect(('data.pr4e.org', 80))
+
+# Application Protocol: 
+# HTTP=Hypertext Transfer Protocol: The dorminant application layer protocol on the internet. Invented for the Web-to retrieve HTML, images, Documents etc. Extended to be data in addition tpo documents - RSS, Web services, etc. Basic concept= Make a conncetion-Request a document-Retrieve the document-Close the connection.
+# HTTP: The HyperText Transfer Protocol is the set of rules to allow browsers to retrieve web documents from servers over the internet. A protocol is a set of rules that all parties follow so we can predict each other's behavior. URL:A URL (Uniform Resource Locator) is the unique web address (like https://www.example.com/page) used to find and access resources (web pages, images, files) on the internet, telling browsers the protocol (how to connect), the domain name (where it is), and the specific path (which file) needed, acting as a digital address for online content. 
+
+# An HTTP Request in Python
+import socket
+mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+mysock.connect(('data.pr4e.org', 80))
+cmd = "GET http://data.pr4e.org/romeo.txt HTTP/1.0\n\n".encode()
+mysock.send(cmd)
+
+while True:
+     data = mysock.recv(512)
+     if (len(data) < 1):
+          break
+     print(data.decode())
+mysock.close()
+
+# Multi-Byte Characters: To represent the wide range of characters computers must handle we represent characters with more than one byter. UTF-16 = Fixed length-Two bytes, UTF-32 = Fixed Length - Four bytes, UTF-8 = 1-4 bytes. Upwards compatible with ASCII. Automatic detection between ASCII and UTF-8. UTF-8 is recommended practice for encoding data to be exchanged between systems.
+
+# UNICODE SUPPORT: The greatest difference between Python 2 and Python 3 is that, in Python 2, bytes and strings were thesame and unicode seperate, while in python 3, strings and unicode are thesame while bytes are difference.
+# In Python 2, every single Unicode string has to be marked with a “u” prefix as it uses ASCII characters by default. By contrast, Python 3 stores strings as Unicode by default, which is more versatile than ASCII strings. When sending data to a network, you must encode()into UTF-8 to get a byte array why receiving data from a network, you most decode() to get a string array.
+
+# Using urllib in Python: Since HTTP is so common, we have a library that does all the socket work for us and make web pages look like a file.
+
+import urllib.request, urllib.parse, urllib.error
+
+fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
+for line in fhand:
+     print(line.decode().strip())
+
+# Retrieving like a file, a dictionary
+
+import urllib.request, urllib.parse, urllib.error
+
+fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
+
+counts = dict()
+for line in fhand:
+     words = line.decode().split()
+     for word in words:
+          counts[word] = counts.get(word,0) + 1
+print(counts)
+
+# Reading Web Pages
+
+import urllib.request, urllib.parse, urllib.error
+
+fhand = urllib.request.urlopen('http://www.dr-chuck.com/page1.htm')
+for line in fhand:
+     print(line.decode().strip())
+
+# Web Scraping: When a program or script pretends to be a browser and retrieves web pages, looks at those web pages, extracts information, and then looks at more web pages. Search engines scrape web pages-we call this 'spidering the web' or 'web crawling'
+
+# Why Scrape? Pull data- particularly socio data- who links to who?, Get your own data back ou of some system that has no 'export capability', Monitor a site for new information, Spider the web to make a database for a search engine.
+
+# The Easy Way - Beautiful Soup: You could do string searches the hard way. Or use the free software library called BeautifulSoup from www.crummy.com
 
