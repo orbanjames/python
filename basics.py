@@ -845,5 +845,24 @@ for tag in tags:
 # A wire protocol defines the rules for how applications communicate over a network, specifying the format, sequence, and encoding of data (messages) sent between systems, ensuring different software can interoperate, often at the application (Layer 7) level, distinct from underlying transport protocols like TCP/UDP. Examples include protocols for databases (PostgreSQL), debuggers (JDWP), and general distributed systems (SOAP, Wayland). 
 # XML=eXtensible Markup Language, Marking up data to send across the network. The primary purpose is to help information system share structured data. It started as a simpliified subset of the Standard Generalized Markup Language (SGML), and is designed to be relatively human-legible
 
+# XML Shema: Description of the legal format of an XML document. Expressed in terms of constraints on the structure and content of documents. Often use to specify a 'contract' between systems- 'My system will only accept XML that conforms ot this paricular schema.If a particular piece of XML meets the specification of the Schema- it is said to 'validate'
+
+# JavcaScript Object Notation: Object literal notation in JavaScript. JSON represents data as nested lists and dictionaries.
+
+import json
+data = '''{
+    "name" : "Jason",
+     "phone" : {
+    "type" : "int",
+    "number" : "+234 75395017"
+   },
+   "email" : {
+     "hide" : "yes"
+   } 
+}'''
+
+info = json.loads(data)
+print('Name:',info['name'])
+print('Hide:',info['email']['hide'])
 
 
