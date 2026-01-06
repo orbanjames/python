@@ -838,3 +838,12 @@ for tag in tags:
      print(tag.get('href', None))
 
 
+# WEB SERVICES
+# Data on the Web: With the HTTP Request/Response well understood and well supported, there was a natural move toward exchanging data between programs using these protocols. We needed to come up with an agreed way to represent data going between applications and across networks. There are two dommonly used formats: XML and JSON
+
+# Wire Protocol: it is a protocol that is independent, it is what we send on the wire. 
+# A wire protocol defines the rules for how applications communicate over a network, specifying the format, sequence, and encoding of data (messages) sent between systems, ensuring different software can interoperate, often at the application (Layer 7) level, distinct from underlying transport protocols like TCP/UDP. Examples include protocols for databases (PostgreSQL), debuggers (JDWP), and general distributed systems (SOAP, Wayland). 
+# XML=eXtensible Markup Language, Marking up data to send across the network. The primary purpose is to help information system share structured data. It started as a simpliified subset of the Standard Generalized Markup Language (SGML), and is designed to be relatively human-legible
+
+
+
