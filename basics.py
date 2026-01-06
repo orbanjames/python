@@ -702,7 +702,51 @@ lst = sorted(lst, reverse=True)
 for val, key in lst[:10]:
     print(key, val)
 
+# Regular Epression: Regular expressions are cryptic but powerful language for matching strings and extracting elements from those strings. They have special characters that indicate intent.
 
+# eg1: Using re.search() like find() in a list.
 
+import re
+hand = open('mbox-short.txt')
+for line in hand:
+     line = line.rstrip()
+     if re.search('From:', line):
+          print(line)
+
+# Matching and Extracting Data
+# re.search returns a True/False depending on wether the string matches the regular expression
+# if we actually want the matching strings to be extracted, we use re.findall()
+
+import re
+x = 'My 2 favorite numbers are 19 and 42'
+y = re.findall('[0-9]+',x)
+print(y)  # Result ['2', '19', '42']
+z = re.findall('[AEIOU]+',x)
+print(z) # Result into an empty list []
+
+# Greedy Matching: The repeat characters (* and +) push outward in both directions (greedy) to match the largest possible string.
+import re
+x = 'From: Using the : character'
+y = re.findall('F.+:', x)
+print(y)
+
+# Non-Greedy Matching
+import re
+x = 'From: Using the : character'
+y = re.findall('F.+?:', x)
+print(y)
+
+# program to extract spam from and email(spam confidence)
+
+import re
+hand = open('mbox-short.txt')
+numlist = list()
+for line in hand:
+     line = line.strip()
+     stuff = re.findall('X-DSPAM-Confidence: ([0-9.]+)', line)
+     if len(stuff) != 1 : continue
+     num = float(stuff[0])
+     numlist.append(num)
+print('Maximum:', max(numlist)) # Maximum = 0.9907
 
 
