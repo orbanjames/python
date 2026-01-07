@@ -47,8 +47,8 @@ CREATE TABLE "Track" (
     album_id INTEGER, genre_id INTEGER, len INTEGER, rating INTEGER, 
     "title" TEXT, "count" INTEGER)
 
-INSERT INTO Artist (name) VALUES ('Led Zepplin')
-INSERT INTO Artist (name) VALUES ('AC/DC')
+INSERT INTO Artist (name) VALUES ('Led Zepplin');
+INSERT INTO Artist (name) VALUES ('AC/DC');
 
 INSERT INTO Genre (name) VALUES ('Rock') ;
 INSERT INTO Genre (name) VALUES ('Metal');
