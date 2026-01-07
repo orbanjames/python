@@ -871,3 +871,19 @@ print('Hide:',info['email']['hide'])
 # http://maps.googleapis.com/maps/api/geocode/json?address=Ann+Arbor%2C+MI
 
 # API Secrurity and Rate Limiting: The compute resurces to run this API are not free, the data provided by these APIs is usally valuable. The data providers might limit the number of request per day, demand an API key, or even charge for usage. They might chnage the rules as things progress.eg Twitter API, Google geolocation API
+
+# PYTHON OBJECTS: More on Data Structures.
+# An object is a bit of self-contained code and data. Akey aspect of the Object approach is to brek the problem into smaller understandable parts(divide and conquer). Objects have boundaries that allow us to ignore un-needed detail. We have been using objects all along: String Objects, Integer Objects, Dictionary Objects, List Objects....
+
+# Class: defines the abstract characteristics of a thing (object), including the things characteristics (its attributes, fields or properties) and the things behaviors (the things it can do, or methods operations or features). One might say that a class is a blueprint or factory that describes the nature of something.
+
+class PartyAnimal:
+     x = 0
+
+     def party(self):
+      self.x = self.x + 1
+      print("So far", self.x)
+
+an = PartyAnimal()
+an.party()
+an.party()
