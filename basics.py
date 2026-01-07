@@ -954,3 +954,15 @@ j.party()
 j.touchdown()
 
 # DATABASES: Relational Databases and SQLite
+# Relational Databases: Relational Databases model data by storing rows and columns in tables. The powoer of the reltional database lies in its abilty to efficiently retrieves data from those tables and in particular where there are multiple tables and the relationship between those tables involved in the query.
+# A Relation is defiened as set of tuples that have thesame attributes. A tuple usually represents an object ad information about that object. Objects are typically physical objects or concepts. A relation is usually described as a table, which is organized into rows and columns. All the data referenced by an attribute are in the same domain and conform to the same constraints.
+
+# SQL: Structured Query Language is the language we use to issue commands to the databases. create a table, retrieve some data, insert data, delete data.
+
+# Web Applications w/Databases:
+# Application Developer: Builds the logic fpor the application the look and feel of the application -monitors the application for problems.
+# Database Administrator: Monitors and adjust the database as the program runs in production. Often both participate in the building of the "Data Model".
+# A Database Administrator (DBA) is a person responsible for the design, implementation, maintenance and repair of an organization's datatbase. The role includes the development and design of the database stratagies, monitoring and improving database performance and capacity, and planning for future expansion requirements. They may also plan, coordinate, and implement security measures to safeguard the database.
+
+# Database Model: A database model or database schema is the structure or format of a database, described in a formal language supported by the database managemment system. Inother words, a "database model" is the application of a data model when used in conjuction with a database amanagement system. Common Databaes systems include: Oracle, MySql, SqlServer, PostgreSQL, SQLite, HSQL.
+# https://www.py4e.com//lecture3/Pythonlearn-15-Database-Handout.txt
