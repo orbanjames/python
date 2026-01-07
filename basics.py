@@ -966,3 +966,19 @@ j.touchdown()
 
 # Database Model: A database model or database schema is the structure or format of a database, described in a formal language supported by the database managemment system. Inother words, a "database model" is the application of a data model when used in conjuction with a database amanagement system. Common Databaes systems include: Oracle, MySql, SqlServer, PostgreSQL, SQLite, HSQL.
 # https://www.py4e.com//lecture3/Pythonlearn-15-Database-Handout.txt
+
+# Database Design: Database design is an art form of its own with particular skills and expericience. Our goal is to avoid the really bad mistakes and design clean and easily understood databases. others may performace tune thing later. Database design starts with a picture.
+
+# Building a Database Model: Drawing a picture of the data objects for our application and then figuring out how to represent the objects and their relationships. Basic Rule: Dont put thesame string data in twice- use a relationship instead. When ther is on thing in the real world ther should be one copy of that thing in database.
+
+# Database Normalization (3NF): There is "tons" of database theory- way too much to understand without excessive predictable calculus. Do not replicate data - reference data - point at data. Use integers for keys and for references. Add a special "key" column to each tbale which we will make references to. By convention, many programmers call this column "id".
+
+# Three kinds of keys: a. Primary key- generally an integer auto-increment filed. b. Logical key- what the outside world uses for lookup. c. Foreign key- generally an integer key pointing to a row in another table.
+
+# Key Rules: Never use your logical key as the primary key. Logical keys can and do changes, albeit slowly. Relationships that are based on matching string fields are less efficient than integers.
+
+#  Foreign keys: A foreign key is when a tbale has a column that contains a key whiuch points to the primary key of another table. When all primary keys are integers, then all foreign keys are integers- this is good = very good.
+
+# Join Operation: Relational Power- By removing the replicated data and replacing it with references to a single copy of each bit of data we build a web of information that the relational database can read through veyr quickly-even for very large amounts of data. Often when you wnant some data it comes from a number of tables linked by these foreign keys.
+
+# Join Operation links across several tables as aprt of a select operation. You must tell  the JOIN how to use the keys that makes te connection between the tables using an ON clause.
