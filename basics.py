@@ -869,3 +869,5 @@ print('Hide:',info['email']['hide'])
 
 # Application Program Interface: The API itself is largely abstract in that it specifies an interface and controls the behavior of the objects specified in that interface. The software that provides the functionality described by an API is said to be an "implementation" of the API. An API is typically defined in terms of the programming languiafge used to be build an application.
 # http://maps.googleapis.com/maps/api/geocode/json?address=Ann+Arbor%2C+MI
+
+# API Secrurity and Rate Limiting: The compute resurces to run this API are not free, the data provided by these APIs is usally valuable. The data providers might limit the number of request per day, demand an API key, or even charge for usage. They might chnage the rules as things progress.eg Twitter API, Google geolocation API
