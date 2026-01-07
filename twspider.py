@@ -42,19 +42,19 @@ while True:
     # print json.dumps(js, indent=4)
 
     cur.execute('UPDATE Twitter SET retrieved=1 WHERE name = ?', (acct, ))
-
-#     countnew = 0
-#     countold = 0
-#     for u in js['users']:
-#         friend = u['screen_name']
-#         print(friend)
-#         cur.execute('SELECT friends FROM Twitter WHERE name = ? LIMIT 1',
-#                     (friend, ))
-#         try:
-#             count = cur.fetchone()[0]
-#             cur.execute('UPDATE Twitter SET friends = ? WHERE name = ?',
-#                         (count+1, friend))
-#             countold = countold + 1
+     
+    countnew = 0
+    countold = 0
+    for u in js['users']:
+        friend = u['screen_name']
+        print(friend)
+        cur.execute('SELECT friends FROM Twitter WHERE name = ? LIMIT 1',
+                    (friend, ))
+        try:
+            count = cur.fetchone()[0]
+            cur.execute('UPDATE Twitter SET friends = ? WHERE name = ?',
+                        (count+1, friend))
+            countold = countold + 1
 #         except:
 #             cur.execute('''INSERT INTO Twitter (name, retrieved, friends)
 #                         VALUES (?, 0, 1)''', (friend, ))
