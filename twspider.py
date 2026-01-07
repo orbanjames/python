@@ -55,11 +55,11 @@ while True:
             cur.execute('UPDATE Twitter SET friends = ? WHERE name = ?',
                         (count+1, friend))
             countold = countold + 1
-#         except:
-#             cur.execute('''INSERT INTO Twitter (name, retrieved, friends)
-#                         VALUES (?, 0, 1)''', (friend, ))
-#             countnew = countnew + 1
-#     print('New accounts=', countnew, ' revisited=', countold)
-#     conn.commit()
+        except:
+            cur.execute('''INSERT INTO Twitter (name, retrieved, friends)
+                        VALUES (?, 0, 1)''', (friend, ))
+            countnew = countnew + 1
+    print('New accounts=', countnew, ' revisited=', countold)
+    conn.commit()
 
-# cur.close()
+cur.close()
