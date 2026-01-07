@@ -19,16 +19,16 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-# while True:
-#     acct = input('Enter a Twitter account, or quit: ')
-#     if (acct == 'quit'): break
-#     if (len(acct) < 1):
-#         cur.execute('SELECT name FROM Twitter WHERE retrieved = 0 LIMIT 1')
-#         try:
-#             acct = cur.fetchone()[0]
-#         except:
-#             print('No unretrieved Twitter accounts found')
-#             continue
+while True:
+    acct = input('Enter a Twitter account, or quit: ')
+    if (acct == 'quit'): break
+    if (len(acct) < 1):
+        cur.execute('SELECT name FROM Twitter WHERE retrieved = 0 LIMIT 1')
+        try:
+            acct = cur.fetchone()[0]
+        except:
+            print('No unretrieved Twitter accounts found')
+            continue
 
 #     url = twurl.augment(TWITTER_URL, {'screen_name': acct, 'count': '20'})
 #     print('Retrieving', url)
