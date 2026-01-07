@@ -877,13 +877,63 @@ print('Hide:',info['email']['hide'])
 
 # Class: defines the abstract characteristics of a thing (object), including the things characteristics (its attributes, fields or properties) and the things behaviors (the things it can do, or methods operations or features). One might say that a class is a blueprint or factory that describes the nature of something.
 
+# class PartyAnimal:
+#      x = 0
+
+#      def party(self):
+#       self.x = self.x + 1
+#       print("So far", self.x)
+
+# an = PartyAnimal()
+
+# an.party()
+# an.party()
+# an.party()
+
+# dir()is a function used to find the capabilities of an Objects.
+y = "Hello there"
+dir(y)  # Shows the capabilities of the String Object: ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+
+# Object Lifecycle: Objects are created, used and discarded. We have special blocks of code (methods) that get called, -at the moment of creation(constructor) - at the moment of destruction(destructor). Constructors are used alot. Destructors are seldom used.
+
+# Constructor: The primary purpose of the constructor is to set up some instance variables to have the proper initial values when the object is created.
+
+# class PartyAnimal:
+#      x = 0
+      
+#      def __init__(self):
+#       print('I am constructed')
+
+#      def party(self):
+#       self.x = self.x + 1
+#       print("So far", self.x)
+     
+#      def __del__(self):
+#       print('I am destructed', self.x)
+
+# an = PartyAnimal()
+# an.party()
+# an.party()
+# an = 42
+# print('an contains', an)
+
+# In object oriented programming, a constructor in a class is a special block of statements called when an object is created.
+
+# In the example below, we have two independent instances of the class PartyAnimal. (S and J)
 class PartyAnimal:
      x = 0
+     name = ""
+     def __init__(self,z):
+      self.name = z
+      print(self.name, 'constructed')
 
      def party(self):
       self.x = self.x + 1
-      print("So far", self.x)
+      print(self.name, 'party count', self.x)
 
-an = PartyAnimal()
-an.party()
-an.party()
+s = PartyAnimal('Sally')
+s.party()
+
+j = PartyAnimal('Jim')
+j.party()
+s.party()
