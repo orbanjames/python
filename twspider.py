@@ -30,18 +30,18 @@ while True:
             print('No unretrieved Twitter accounts found')
             continue
 
-#     url = twurl.augment(TWITTER_URL, {'screen_name': acct, 'count': '20'})
-#     print('Retrieving', url)
-#     connection = urlopen(url, context=ctx)
-#     data = connection.read().decode()
-#     headers = dict(connection.getheaders())
+    url = twurl.augment(TWITTER_URL, {'screen_name': acct, 'count': '20'})
+    print('Retrieving', url)
+    connection = urlopen(url, context=ctx)
+    data = connection.read().decode()
+    headers = dict(connection.getheaders())
 
-#     print('Remaining', headers['x-rate-limit-remaining'])
-#     js = json.loads(data)
-#     # Debugging
-#     # print json.dumps(js, indent=4)
+    print('Remaining', headers['x-rate-limit-remaining'])
+    js = json.loads(data)
+    # Debugging
+    # print json.dumps(js, indent=4)
 
-#     cur.execute('UPDATE Twitter SET retrieved=1 WHERE name = ?', (acct, ))
+    cur.execute('UPDATE Twitter SET retrieved=1 WHERE name = ?', (acct, ))
 
 #     countnew = 0
 #     countold = 0
