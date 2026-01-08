@@ -982,3 +982,19 @@ j.touchdown()
 # Join Operation: Relational Power- By removing the replicated data and replacing it with references to a single copy of each bit of data we build a web of information that the relational database can read through veyr quickly-even for very large amounts of data. Often when you wnant some data it comes from a number of tables linked by these foreign keys.
 
 # Join Operation links across several tables as aprt of a select operation. You must tell  the JOIN how to use the keys that makes te connection between the tables using an ON clause.
+
+# Additional SQL Topics: Indexes improve access performance for things like fields. Constraints on data-(cannot be NULL, etc), Transactions-allow SQL operations to be groupd and done as a unit.
+
+# Data Mining Technologies: https://hadoop.apache.org/, http://spark.apache.org/, https://aws.amazon.com/redshift/,http://community.pentaho.com/
+
+# P1-GeoData: Makes a Google Map from user entered data, Uses the Google Geodata API, Caches data in a databaes to avoid rate limiting and allow restarting, Visualized in a browser using the Google Maps API.
+
+# P2-Page Rank: Wrtie a simple web crawler. Compute a simple version of Googles Page Rank algorithm. Visualize the resulting network.
+
+# Web Crawler: A web crawler is a computer program that browses the world wide web in a methodical, automated manner. Web crawlers are maily used to create a copy of all the visited pages for later processing by a search engine that will inde the download pages to provide fast searches.Retrieve the page, look through the page for links, add the links to a list of 'to be retrieved' site, repeat....
+
+# robots.txt: A wa]y for a web site to communicate with web crawlers. AN INFORMAL AND VOLUNTARY STANDARD. Sometimes folks makes a Spider Trap, to catch bad spiders.
+
+# Google Architecture: Web crawling, Indexing, web building. Search Indexing: Search engine indexing collects, parses, and stores data to facilitate fast and accurate information retrieval. The purpose of storing an index is to optimize speed and performance in finding relevant documents for a search query. Without an index, the search engine would scan evry document in the corpus, which would require considerate time and computing power.
+
+# P3=Mailing List-Gmane Project:- Crawl the archive of a mailing liost. Do some analysis/cleanup, visualize the data as word cloud and lines. http://mbox.dr-chuck.net/sakai.devel/4/5
